@@ -41,4 +41,3 @@ img = cv2.putText(img, a, (10,400), 0, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
 cv2.imshow('image', img) # Вывод на полотно всех созданных элементов
 
 cv2.waitKey(0)
-cv2.destroyAllWindows()

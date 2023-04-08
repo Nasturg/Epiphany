@@ -25,4 +25,3 @@ s = cv2.addWeighted(r1, 1, r2, 0.6, 0)
 
 cv2.imshow('add', s) # собтсвенно отрисовка
 cv2.waitKey(0) # ожидания события нажатия любой кнопки бесконечность
-cv2.destroyAllWindows() # закрыть все окна
