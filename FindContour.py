@@ -18,6 +18,7 @@ def on_trackbar(x):
     r = cv2.getTrackbarPos('Lower', 'image')
     # Сохраняем значение в переменную
     lower = r
+    return r
 
 #img = cv2.imread('Test1.png')  # чтение картинки
 
