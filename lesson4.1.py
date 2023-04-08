@@ -1,4 +1,4 @@
-# Цветовое пространство
+# Цветовое пространство и геометрическое изменение
 
 import cv2
 import numpy as np
@@ -40,7 +40,14 @@ while True:
     # Создание маски, то есть фильтрации пикселей находящихся в диапозоне
     mask = cv2.inRange(hsv, lower, upper)
 
-    res = cv2.bitwise_or(frame, frame, mask = mask)
+    res = cv2.bitwise_or(frame, frame, mask = mask) # ыполняет операцию поразрядного
+    # ИЛИ (bitwise OR) над двумя изображениями frame и маской mask
+
+    # res = cv2.rotate(res, cv2.ROTATE_90_CLOCKWISE) # Разворот изображения
+
+    height, width = res.shape[:2] # Берём только значения высоты и длины, последнии три это света rgb
+
+    res = cv2.resize(res, (width * 2, height * 2), interpolation = cv2.INTER_CUBIC)
 
     # Вывод видео
     cv2.imshow('frame', frame)
