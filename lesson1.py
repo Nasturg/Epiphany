@@ -5,7 +5,7 @@ import cv2
 #import numpy as np
 
 '''
-img = cv2.imread('OpenCV.png', -1) # выбор картиники с которой будем работать
+img = cv2.imread('image/OpenCV.png', -1) # выбор картиники с которой будем работать
 # 1 - цветное чтение, 0 - черно-белое, -1 - альфа канал
 
 cv2.namedWindow("image_logo", cv2.WINDOW_NORMAL) # Настрой ка открываемого окна с изображение

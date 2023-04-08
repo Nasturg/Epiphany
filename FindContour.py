@@ -20,7 +20,7 @@ def on_trackbar(x):
     lower = r
     return r
 
-#img = cv2.imread('Test1.png')  # чтение картинки
+#img = cv2.imread('image/Test1.png')  # чтение картинки
 
 cap = cv2.VideoCapture(0) # Считывание видео потока с веб камеры ноута
 
