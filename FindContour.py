@@ -14,11 +14,7 @@ import numpy as np
 
 # функция обратного вызова
 def on_trackbar(x):
-    # получем текущие значение ползунка
-    r = cv2.getTrackbarPos('Lower', 'image')
-    # Сохраняем значение в переменную
-    lower = r
-    return r
+    pass
 
 #img = cv2.imread('image/Test1.png')  # чтение картинки
 
@@ -40,7 +36,11 @@ while True:
     # Функция cv2.cvtColor() используется для изменения цветовой модели изображения
     # константу cv2.COLOR_BGR2GRAY для преобразования в градации серого
 
-    edges = cv2.Canny(gray, lower, 200) # оздает изображение, на котором выделены контуры объектов
+    # получем текущие значение ползунка
+    lower_val = cv2.getTrackbarPos('Lower', 'image')
+    upper_val = cv2.getTrackbarPos('Upper', 'image')
+
+    edges = cv2.Canny(gray, lower_val, upper_val) # оздает изображение, на котором выделены контуры объектов
     # функция cv2.Canny(), которая находит границы объектов на изображении с помощью алгоритма Canny
     # Первый аргумент функции - это исходное изображение в градациях серого
     # второй и третий аргументы определяют пороги, при которых будут определены границы объектов
@@ -70,11 +70,8 @@ while True:
         cv2.drawContours(frame, [box], 0, (0, 0, 255), 2) # рисует контур на изображении "frame"
         # вокруг прямоугольника, ограничивающего объект на изображении
 
-    cv2.imshow('image', frame)
+    cv2.imshow('image', frame) # Вывод изображения
 
-    r = cv2.getTrackbarPos('Lower', 'image')
-    g = cv2.getTrackbarPos('Upper', 'image')
-    #frame[:] = [b, r, g]
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         # cv2.waitKey(0) - бесконечное ожидание нажатия кнопки
