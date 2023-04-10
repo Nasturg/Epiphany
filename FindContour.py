@@ -14,7 +14,7 @@ import cv2
 import numpy as np
 
 # функция обратного вызова
-def on_trackbar(x):
+def on_trackbgar(x):
     pass
 
 #img = cv2.imread('image/Test1.png')  # чтение картинки
