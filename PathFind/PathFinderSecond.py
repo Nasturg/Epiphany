@@ -1,10 +1,6 @@
 from heapq import *
-
-graph = {'A': [(2, 'M'), (3, 'P')],
-         'M': [(2, 'A'), (2, 'N')],
-         'N': [(2, 'M'), (2, 'B')],
-         'P': [(3, 'A'), (4, 'B')],
-         'B': [(4, 'P'), (2, 'N')]}
+import sys
+import json
 
 
 def dijkstra(start, goal, graph):
@@ -30,12 +26,33 @@ def dijkstra(start, goal, graph):
     return visited
 
 
-start = 'A'
-goal = 'B'
+# start = 'A'
+start = str(sys.argv[1])
+# goal = 'B'
+goal = str(sys.argv[2])
+graph = json.loads(sys.argv[3])
+
+
+'''
+if num == 1:
+    graph = {'A': [(2, 'M'), (3, 'P')],
+             'M': [(2, 'A'), (2, 'N')],
+             'N': [(2, 'M'), (2, 'B')],
+             'P': [(3, 'A'), (4, 'B')],
+             'B': [(4, 'P'), (2, 'N')]}
+elif num == 2:
+    graph = {'A': [(2, 'M'), (3, 'P')],
+             'M': [(2, 'A'), (2, 'N')],
+             'N': [(2, 'M'), (2, 'B')],
+             'P': [(3, 'A'), (4, 'B')],
+             'B': [(4, 'P'), (2, 'N')]}
+'''
+
 visited = dijkstra(start, goal, graph)
 
 cur_node = goal
-print(f'\npath from {goal} to {start}: \n {goal} ', end='')
+# print(f'\npath from {goal} to {start}: \n {goal} ', end='')
+print('{s}'.format(s=goal))
 while cur_node != start:
     cur_node = visited[cur_node]
-    print(f'---> {cur_node} ', end='')
+    print('{cur_node}'.format(cur_node=cur_node))
