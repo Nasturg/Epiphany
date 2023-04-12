@@ -2,8 +2,8 @@
 
 import cv2
 
-img1 = cv2.imread('image/OpenCV.png') # вызов первой картинки
-img2 = cv2.imread('image/Leetcode.png') # вызов второй картинки
+img1 = cv2.imread('../image/OpenCV.png') # вызов первой картинки
+img2 = cv2.imread('../image/Leetcode.png') # вызов второй картинки
 
 # Перед отрисовкой необходимо привести все изображение к одному размеру
 r1 = cv2.resize(img1, (720, 720))
