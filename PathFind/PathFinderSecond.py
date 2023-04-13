@@ -32,7 +32,9 @@ start = str(sys.argv[1])
 # goal = 'B'
 goal = str(sys.argv[2])
 num = int(sys.argv[3])
+# graph = json.dumps(sys.argv[3])
 
+# '''
 if num == 1:
     graph = {'A': [(34, 'B')],
              'B': [(34, 'A'), (82, 'C')],
@@ -55,6 +57,7 @@ elif num == 2:
              'N': [(2, 'M'), (2, 'B')],
              'P': [(3, 'A'), (4, 'B')],
              'B': [(4, 'P'), (2, 'N')]}
+# '''
 
 visited = dijkstra(start, goal, graph)
 

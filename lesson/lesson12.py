@@ -9,14 +9,17 @@ frame_width = int(vid_capture.get(3))
 frame_height = int(vid_capture.get(4))
 frame_size = (frame_width, frame_height)
 fps = 30
+frames = 100
 
 # Инициализировать объект записи видео
-video_writer = cv2.VideoWriter('../video/output.avi', cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'), fps, frame_size)
+fourcc = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
+video_writer = cv2.VideoWriter('../video/output.avi', fourcc, fps, frame_size)
 
 cap = cv2.VideoCapture(0)
-while True:
+
+for i in range(frames):
     ret, frame = cap.read()
-    cv2.imshow('frame', frame)
+    # cv2.imshow('imshowframe', frame)
     if not ret:
         break
     video_writer.write(frame)
