@@ -17,8 +17,8 @@ BLUR_CORE_CONVULTION = (3, 3)
 # FILE = WAY + "result.txt"
 TRESHOLD = 0.8
 
-matrix_width = 5
-matrix_heigth = 3
+matrix_width = 1
+matrix_heigth = 4
 matrix =   [[0,0,0,0,0],
             [0,0,0,0,0],
             [0,0,0,0,0]]

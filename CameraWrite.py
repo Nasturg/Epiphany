@@ -3,6 +3,8 @@ import cv2
 vid_capture = cv2.VideoCapture(0)
 
 # frame_width = int(vid_capture.get(3))
+
+
 vid_capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 vid_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 frame_width = 1280

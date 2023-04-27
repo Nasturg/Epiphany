@@ -26,7 +26,7 @@ cv2.destroyAllWindows()
 '''
 
 # загрузка изображения
-img = cv2.imread('image.jpg', 0)
+img = cv2.imread('image/Test1.png', 0)
 
 # бинаризация изображения
 ret, thresh = cv2.threshold(img, 127, 255, 0)

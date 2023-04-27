@@ -4,6 +4,12 @@ import os
 # import qrcode
 # import numpy as np
 
+'''
+Создание qr-кодов.
+Чтение qr-кодов и их последующая запись, по указанному пути,
+заданного размера 75 х 75 пикселей.
+'''
+
 path = 'image/'
 path_qr = 'image/qr/'
 path_qr_clean = 'image/qr_clean/'
